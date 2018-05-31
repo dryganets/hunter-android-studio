@@ -11,8 +11,8 @@ include("cmake/HunterGate.cmake")
 # last version which supports version of cmake distributed by default
 
 HunterGate(
-    URL "https://github.com/ruslo/hunter/archive/v0.16.36.tar.gz"
-    SHA1 "a47baf7a23fee038812baa7d6a9362ca1770b6ed"
+    URL "https://github.com/ruslo/hunter/archive/v0.22.0.tar.gz"
+    SHA1 "f91a01c6e0eb53b1dc55a6442cd93580db91da07"
 )
 project(hunter-android-studio)
 
