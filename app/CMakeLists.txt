@@ -5,6 +5,20 @@
 
 cmake_minimum_required(VERSION 3.4.1)
 
+# hunter integration
+include("cmake/HunterGate.cmake")
+
+# last version which supports version of cmake distributed by default
+
+HunterGate(
+    URL "https://github.com/ruslo/hunter/archive/v0.16.36.tar.gz"
+    SHA1 "a47baf7a23fee038812baa7d6a9362ca1770b6ed"
+)
+project(hunter-android-studio)
+
+hunter_add_package(Boost COMPONENTS system)
+find_package(Boost CONFIG REQUIRED system)
+
 # Creates and names a library, sets it as either STATIC
 # or SHARED, and provides the relative paths to its source code.
 # You can define multiple libraries, and CMake builds them for you.
@@ -38,7 +52,7 @@ find_library( # Sets the name of the path variable.
 
 target_link_libraries( # Specifies the target library.
                        native-lib
-
+                        Boost::system
                        # Links the target library to the log library
                        # included in the NDK.
                        ${log-lib} )
