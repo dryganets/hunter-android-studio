@@ -16,8 +16,9 @@ HunterGate(
 )
 project(hunter-android-studio)
 
-hunter_add_package(Boost COMPONENTS system)
-find_package(Boost CONFIG REQUIRED system)
+hunter_add_package(Boost)
+find_package(Boost CONFIG REQUIRED)
+include_directories(${Boost_INCLUDE_DIRS})
 
 # Creates and names a library, sets it as either STATIC
 # or SHARED, and provides the relative paths to its source code.
@@ -52,7 +53,6 @@ find_library( # Sets the name of the path variable.
 
 target_link_libraries( # Specifies the target library.
                        native-lib
-                        Boost::system
                        # Links the target library to the log library
                        # included in the NDK.
                        ${log-lib} )
